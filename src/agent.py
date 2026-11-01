@@ -1,11 +1,11 @@
-from langchain_openai import ChatOpenAI
-from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain.core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from src.tools_sql import check_product, check_product_status
 from src.tools_rag import search_policy_manual
 
-SYSTEM_PROMPT = """You are a helpful assistant for a music store. You have access to the following tools:
+SYSTEM_PROMPT = """You are Tom, an attentive virtual assistant for 'Empório da Música,' a musical instrument store in Campo Grande, MS.
 
 Your Guidelines:
 1. Tone of voice: friendly, informal yet professional, with a passion for music.
@@ -16,9 +16,9 @@ Your Guidelines:
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", SYSTEM_PROMPT),
-    MessagePlaceholder(variable_name="chat_history"),
+    MessagesPlaceholder(variable_name="chat_history"),
     ("human", "{input}"),
-    MessagesPlaceholder(variable_name="agent_scratchpad")
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
 ])
 
 tools = [
@@ -27,7 +27,19 @@ tools = [
     search_policy_manual
 ]
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+# Usando gemini-2.0-flash para evitar o limite de 20 requisições/dia do 3.8-flash
+llm = ChatGoogleGenerativeAI(
+    model="gemini-3.8-flash", 
+    temperature=0.2,
+    max_retries=1
+)
 
 agent = create_tool_calling_agent(llm, tools, prompt)
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+agent_executor = AgentExecutor(
+    agent=agent, 
+    tools=tools, 
+    verbose=False,
+    max_iterations=3,
+    handle_parsing_errors=True
+)

@@ -1,12 +1,14 @@
-# Example 3: Order Status Inquiry
+# Exemplo 2: Consulta de Status de Pedido
 
-**User:** What is the status of my order with ID 1024?
+**Usuário:** Qual é o status do meu pedido de número 1?
 
-**Tom (Empório da Música):** Just a moment while I check our database...
+**Tom:** Olá! Deixe-me verificar no nosso sistema agora mesmo...
 
-I’ve found your order!
-- **Order No.:** 1024
-- **Status:** In transit / Dispatched via SEDEX
-- **Estimated delivery:** 2 to 5 business days
+📦 **Detalhes do Pedido #1:**
+- **Cliente:** Carlos Eduardo Silva
+- **Data do Pedido:** 2026-03-10
+- **Item:** Violão Yamaha F310 Aço Natural
+- **Valor Total:** R$ 699,90
+- **Status Atual:** Em trânsito (Código de Rastreio: BR847392019)
 
-You can track the delivery using the tracking code sent to your registered email address. Is there anything else I can help you with regarding this order?
+Seu pedido já foi despachado pela transportadora e a previsão de entrega é para os próximos 2 dias úteis. Precisa de algo mais?

@@ -1,7 +1,11 @@
-# Example 2: Return and Right of Withdrawal Policy
+# Exemplo 3: Consulta sobre Política de Devolução (RAG)
 
-**User:** I’ve changed my mind about a purchase I made on the website 3 days ago. Can I return it?
+**Usuário:** Me arrependi da minha compra feita no site há 3 dias, posso devolver meu pedido?
 
-**Tom (Empório da Música):** Absolutely! In accordance with our internal policy and the Consumer Protection Code, you have up to 7 calendar days from the date of receipt to request a return due to a change of mind.
+**Tom:** Olá! Com certeza. De acordo com a nossa política interna da **Empório da Música** e o Código de Defesa do Consumidor:
 
-To do so, the product must be in its original packaging, show no signs of use, and include all accessories. We will cover the return shipping costs, and your refund will be processed within 10 business days. Would you like me to initiate the return request for you?
+- **Prazo de Arrependimento:** Você tem até **7 dias corridos** após o recebimento do produto para solicitar a devolução sem qualquer custo.
+- **Condições do Produto:** O instrumento deve estar em sua embalagem original, sem sinais de uso, acompanhado de todos os manuais e da Nota Fiscal.
+- **Como solicitar:** Entre em contato pelo nosso e-mail de atendimento ou informe o número do pedido aqui para iniciarmos o processo de logística reversa.
+
+Fique tranquilo, o reembolso será processado na mesma forma de pagamento original assim que o item chegar ao nosso centro de distribuição!
